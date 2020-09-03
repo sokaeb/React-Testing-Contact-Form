@@ -27,7 +27,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
+          <label data-testid="label" htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
             id="lastName"
@@ -40,7 +40,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label data-testid="label" htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
           <input 
@@ -52,7 +52,7 @@ const ContactForm = () => {
           )}
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label data-testid="label" htmlFor="message">Message</label>
           <textarea 
             name="message"
             id="message" 
@@ -63,8 +63,7 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        {/* <label htmlFor="submit">Submit</label> */}
-        <input data-testid="submit"type="submit" />
+        <input data-testid="submit" type="submit" />
        
       </form>
     </div>
