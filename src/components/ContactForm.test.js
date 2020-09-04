@@ -7,7 +7,7 @@ test("renders ContactForm without crashing", () => {
   render(<ContactForm />);
 });
 
-test("ContactForm input fields are working and can submit data", () => {
+test("ContactForm input fields are working and can submit data", async () => {
     render(<ContactForm />);
     
     // 2nd test: see if labels are on the form 
@@ -26,7 +26,17 @@ test("ContactForm input fields are working and can submit data", () => {
     const submitBtn = screen.getByTestId(/submit/i);
     fireEvent.click(submitBtn);
 
-    // 5th test: see if form validations appear accordingly 
+    // 5th test: assert that data went through?
+    const newUser = await screen.findByText(/john/i);
+
+    console.log(newUser);
+    // expect(newUser).toHaveTextContent(/john/i);
+    // expect(newUser).Promise.resolve('john');
+    // expect(newUser).toBeInTheDocument();
+
+ 
+});
+
     // const validation = () => {
     // const labelErrors = screen.getAllByTestId(/label/i)
     //     if(labelErrors === ''){
@@ -37,16 +47,11 @@ test("ContactForm input fields are working and can submit data", () => {
     //     expect(validation).toHaveTextContent('Looks like there was an error: required');
     // };
        
-    const validation = () => {
-    if(firstName === ''){
-        fireEvent.change(firstName, {target: { value: ''}});
-        const errorMessage = screen.getByText(/Looks like there was an error: required/i);
-        return errorMessage;
-    }
-    expect(validation).toHaveTextContent('Looks like there was an error: required') 
-    }
-
-    
-  });
-
-
+    // const validation = () => {
+    // if(firstName === ''){
+    //     fireEvent.change(firstName, {target: { value: ''}});
+    //     const errorMessage = screen.getByText(/Looks like there was an error: required/i);
+    //     return errorMessage;
+    // }
+    // expect(validation).toHaveTextContent('Looks like there was an error: required') 
+    // }

@@ -27,7 +27,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label data-testid="label" htmlFor="lastName">Last Name*</label>
+          <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
             id="lastName"
@@ -40,7 +40,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label data-testid="label" htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
           <input 
@@ -52,7 +52,7 @@ const ContactForm = () => {
           )}
         </div>
         <div>
-          <label data-testid="label" htmlFor="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea 
             name="message"
             id="message" 
